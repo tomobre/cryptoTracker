@@ -59,7 +59,8 @@ class CoinsScreen extends Component {
             <CoinsItem
               item={item}
               onPress={() => this.handlePress(item)}></CoinsItem>
-          )}></FlatList>
+          )}
+        />
       </View>
     );
   }

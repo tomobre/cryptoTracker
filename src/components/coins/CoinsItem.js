@@ -4,7 +4,7 @@ import {View, Text, Pressable, StyleSheet} from 'react-native';
 const CoinsItem = ({item, onPress}) => {
   return (
     <Pressable onPress={onPress}>
-      <Text>{item.name}</Text>
+      <Text style={{color: 'black'}}>{item.name}</Text>
       <Text>{item.symbol}</Text>
     </Pressable>
   );
