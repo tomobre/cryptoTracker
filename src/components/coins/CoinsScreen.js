@@ -8,15 +8,28 @@ import {
 } from 'react-native';
 import Http from '../../libs/http';
 import CoinsItem from './CoinsItem';
+import CoinSearch from './CoinsSearch';
 
 class CoinsScreen extends Component {
   state = {
     coins: [],
+    allCoins: [],
     loading: false,
   };
   handlePress = coin => {
     console.log('go to detail', this.props);
     this.props.navigation.navigate('CoinDetail', {coin});
+  };
+  handleSearch = query => {
+    console.log('changing');
+    const {allCoins} = this.state;
+    const coinsFiltered = allCoins.filter(coin => {
+      return (
+        coin.name.toLowerCase().includes(query.toLowerCase()) ||
+        coin.symbol.toLowerCase().includes(query.toLowerCase())
+      );
+    });
+    this.setState({coins: coinsFiltered});
   };
 
   componentDidMount = async () => {
@@ -25,7 +38,7 @@ class CoinsScreen extends Component {
       'https://api.coinlore.net/api/tickers/',
     );
 
-    this.setState({coins: res.data, loading: false});
+    this.setState({coins: res.data, allCoins: res.data, loading: false});
   };
 
   render() {
@@ -33,6 +46,7 @@ class CoinsScreen extends Component {
 
     return (
       <View style={styles.container}>
+        <CoinSearch onChange={this.handleSearch} />
         {loading ? (
           <ActivityIndicator
             style={styles.loader}
