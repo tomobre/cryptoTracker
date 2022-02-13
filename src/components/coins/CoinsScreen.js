@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import Http from '../../libs/http';
 import CoinsItem from './CoinsItem';
-import CoinSearch from './CoinsSearch';
+import CoinsSearch from './CoinsSearch';
+import Colors from '../../res/colors';
 
 class CoinsScreen extends Component {
   state = {
@@ -46,7 +47,7 @@ class CoinsScreen extends Component {
 
     return (
       <View style={styles.container}>
-        <CoinSearch onChange={this.handleSearch} />
+        <CoinsSearch onChange={this.handleSearch} />
         {loading ? (
           <ActivityIndicator
             style={styles.loader}
@@ -67,10 +68,26 @@ class CoinsScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: '#fff', alignItems: 'center'},
-  btn: {padding: 8, backgroundColor: 'blue', borderRadius: 8, margin: 16},
-  btnText: {color: 'white', textAlign: 'center'},
-  loader: {marginTop: 60},
+  container: {
+    flex: 1,
+    backgroundColor: Colors.charade,
+  },
+  titleText: {
+    color: '#fff',
+    textAlign: 'center',
+  },
+  btn: {
+    padding: 8,
+    backgroundColor: 'blue',
+    borderRadius: 8,
+    margin: 16,
+  },
+  btnText: {
+    color: '#fff',
+    textAlign: 'center',
+  },
+  loader: {
+    marginTop: 60,
+  },
 });
-
 export default CoinsScreen;

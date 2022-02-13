@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 const FavoritesEmptyState = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Yoiu don t habe anufaorites</Text>
+      <Text style={styles.text}>you don't have any favorite yet</Text>
     </View>
   );
 };

@@ -45,8 +45,7 @@ class FavoritesScreen extends Component {
   render() {
     const {favorites} = this.state;
     return (
-      <View>
-        <Text>dff</Text>
+      <View style={styles.container}>
         <FlatList
           data={favorites}
           renderItem={({item}) => (

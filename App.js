@@ -20,7 +20,9 @@ const App = () => {
             tabBarIcon: ({size, color}) => {
               <Image
                 style={{tintColor: color, width: size, height: size}}
-                source={require('./src/assets/bank.png')}
+                source={{
+                  uri: 'https://www.iconpacks.net/icons/1/free-coin-icon-794-thumb.png',
+                }}
               />;
             },
           }}
@@ -32,7 +34,9 @@ const App = () => {
             tabBarIcon: ({size, color}) => {
               <Image
                 style={{tintColor: color, width: size, height: size}}
-                source={require('./src/assets/star.png')}
+                source={{
+                  uri: 'https://p1.hiclipart.com/preview/563/803/639/bookmark-icon-favorite-icon-favourite-icon-png-clipart.jpg',
+                }}
               />;
             },
           }}
