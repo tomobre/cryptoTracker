@@ -1,4 +1,4 @@
-package com.cryptotracker;
+package com.cryptotracker_by_to;
 
 import com.facebook.react.ReactActivity;
 
